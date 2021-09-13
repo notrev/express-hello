@@ -4,6 +4,7 @@ const PORT = 3000
 const app = express()
 
 function handleRequest (req, res) {
+  console.log(`[${(new Date()).toLocaleString()}] Request received`)
   res.send('Hello!')
 }
 
