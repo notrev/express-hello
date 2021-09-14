@@ -1,0 +1,18 @@
+version: "3.8"
+services:
+  xhello:
+    image: notrev/express-hello:latest
+    build: .
+    ports:
+      - 3000:3000
+    volumes:
+      - .:/app
+
+  mysql:
+    image: mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=supersecret
+      - MYSQL_USER=yoda
+      - MYSQL_PASSWORD=theforce
+      - MYSQL_DATABASE=jedi
+    command: "--default-authentication-plugin=mysql_native_password"
